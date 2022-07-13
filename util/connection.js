@@ -5,7 +5,7 @@ const connection = new Sequelize({
 	host: 'localhost',
 	database: 'lms',
 	username: 'root',
-	password: '',
+	password: 'Fahd11akem*',
 	logging: false,
 });
 export { connection as default };
