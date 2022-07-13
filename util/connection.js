@@ -1,10 +1,11 @@
-import sequalize from "sequelize"
+import { Sequelize } from 'sequelize';
 
-const connection = new sequalize({
-    dialect: 'mysql',
-    host: 'localost',
-    database: 'lms',
-    username: 'root',
-    password: '',
-})
-export default connection;
+const connection = new Sequelize({
+	dialect: 'mysql',
+	host: 'localhost',
+	database: 'lms',
+	username: 'root',
+	password: '',
+	logging: false,
+});
+export { connection as default };

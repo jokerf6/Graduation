@@ -1,6 +1,6 @@
 import joi from 'joi'
 import joiPassword from 'joi-password'
-import response from "../../util/response"
+import response from "../../util/response.js"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
