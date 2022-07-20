@@ -1,5 +1,4 @@
-import { Sequelize } from 'sequelize';
-
+/**import { Sequelize } from 'sequelize';
 const connection = new Sequelize({
 	dialect: 'mysql',
 	host: 'localhost',
@@ -8,4 +7,4 @@ const connection = new Sequelize({
 	password: 'Fahd11akem*',
 	logging: false,
 });
-export { connection as default };
+export { connection as default };*/
