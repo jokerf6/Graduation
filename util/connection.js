@@ -1,4 +1,4 @@
-/**import { Sequelize } from 'sequelize';
+import { Sequelize } from 'sequelize';
 const connection = new Sequelize({
 	dialect: 'mysql',
 	host: '196.205.94.85',
@@ -7,4 +7,4 @@ const connection = new Sequelize({
 	password: '',
 	logging: false,
 });
-export { connection as default };*/
+export { connection as default };

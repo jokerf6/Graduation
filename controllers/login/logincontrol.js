@@ -1,5 +1,5 @@
 import signup from "./signup.js"
-import singnin from "./signin.js"
+import signin from "./signin.js"
 
 const logincontrol = {
     signup,

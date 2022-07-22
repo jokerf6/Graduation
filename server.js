@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import morgan from "morgan";
-//import connection from "./util/connection.js";
+import connection from "./util/connection.js";
 import Responses from "./util/response.js";
 import nodemailer from "nodemailer";
 import SetupModels from "./models/setupmodels.js";
