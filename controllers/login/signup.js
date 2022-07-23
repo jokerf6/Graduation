@@ -161,20 +161,22 @@ async function register (req , res , next){
             workExperience,
         })
         const accessToken = jwt.sign(
-			{ userId: newUser.userId, role: newUser.role },
+			{ userId: newuser.userId, role: newuser.role },
 			process.env.ACCESS_TOKEN_SECRET,
 			{ expiresIn: 2 * 24 * 60 * 60 }
 		);
 		const refreshToken = jwt.sign(
-			{ userId: newUser.userId, role: newUser.role, refresh: true },
+			{ userId: newuser.userId, role: newuser.role, refresh: true },
 			process.env.REFRESH_TOKEN_SECRET,
 			{ expiresIn: 7 * 24 * 60 * 60 }
 		);
-       delete newuser.dataValues.password;
+      // delete newuser.dataValues.password;
        return response.success(
         res ,
         "registred Successfully",
-        "registred Successfully",
+        {
+            
+        }
        )
     }
     catch(err){

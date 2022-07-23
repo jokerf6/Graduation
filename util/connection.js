@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize';
 const connection = new Sequelize({
 	dialect: 'mysql',
-	host: '196.205.94.85',
+	host: '127.0.0.1',
 	database: 'lms',
 	username: 'root',
 	password: '',
