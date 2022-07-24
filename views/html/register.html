@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <link href="/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
+
+    <title>Accept Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registration</div>
+        <form method="post" action="/signup" >
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" name="firstName" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter your Username" name="lastName" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Enter your email" name="email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your number" name="phone" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" placeholder="Enter your password" name="password1" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" placeholder="Confirm your password" name="password2" required>
+                </div>
+                <div class="gender-details">
+                    <input type="radio" name="gender" name = "boy" id="dot-1">
+                    <input type="radio" name="gender" name = "girl" id="dot-2">
+                    
+                    <span class="gender-title">Gender</span>    
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                            </span>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>   
+                            <span class="gender">Female</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="button">
+                    <input type="submit" value="register">
+                </div>
+                <div class="links">
+                    <div class="col">
+                      <a href="#" class="fb btn">
+                        <i class="fab fa-facebook"></i> Sign up with Facebook
+                      </a>
+                      <a href="#" class="google btn">
+                        <i class="fab fa-google"></i> Sign up with Google+
+                      </a>
+                    </div>
+                  </div>
+            </div>
+        </form>
+    </div>
+    
+
+
+
+</body>
+</html> 
+

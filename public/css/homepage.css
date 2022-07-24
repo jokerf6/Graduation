@@ -1,0 +1,90 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(to left bottom, #000000, #352d38, #4e5d77, #4f97af, #69d3ca);
+ margin: 0;
+ padding: 0;
+}
+.container{
+    padding-left: 100px;
+    padding-top: 50px;
+    padding-right: 100px;
+
+}
+h1{
+    color: honeydew;
+    margin: 0;
+}
+.nav{
+   width:  100%;
+}
+ button{
+float: right;
+transform: translateY(-50%);
+margin-left: 20px;
+color: white;
+padding: 5px 10px;
+overflow: hidden;
+border: 1px solid transparent;
+font-weight: 600;
+font-size: larger;
+}
+.nav .b1{
+    background-color:#f0a51a;
+    }
+.nav .b2{
+background-color: transparent;
+}
+button:hover{
+    cursor: pointer;
+}
+.nav .b1:hover {
+    background-color:#ffa600;
+    }
+    
+.pp button:hover {
+    background-color:#ffa600;
+    }
+.nav .b2:hover{
+    color: #ffa600;
+    }
+    .pp{
+      position: absolute;
+      top: 45%;
+      left: 45%;
+      transform: translate(-50% , -50%);
+      text-align: center;
+     }
+    .pp h1{
+        width: 120%;
+    }
+    .pp h5{
+        color: white;
+        line-height: 1.8;
+        font-size: large;
+        position: relative;
+        transform: translateX(-50%);
+        left: 55%;
+    }
+    #text{
+        line-height: 1.8;        
+    }
+    .pp button{
+        margin-top: 20px;
+        position:absolute;
+        background-color: transparent;
+          background-color: #f0a51a;
+          padding: 8px 25px;
+          
+    }    
+.final{
+    width: 100%;
+    background-image: linear-gradient(to right, #000000, #161616, #252425, #353434, #464444);    position: absolute;
+   bottom: 0%;
+   text-align: center;
+  }
+  .final p{
+    color: white;
+  }
+  .final span{
+    color: #f0a51a;
+  }
