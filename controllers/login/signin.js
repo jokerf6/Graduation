@@ -1,29 +1,50 @@
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import Responses  from "../../util/response"
-import express  from "express"
+import connection from "../../util/connection"
+import User from "../../models/user"
 async function login(req , res , next){
     try{
+        console.log(User)
         const {email , password} = req.body
         if ( !email ) { 
-            return Responses.badrequest( res , "400" , " email cannt be empty ")   }
+            return Responses.badRequest( res , "400" , " email cannt be empty ")   }
         if ( ! password ) { 
-            return Responses.badrequest( res , "400" ,  " password cannt be empty " )   }
-        const { user } = req.db.models
-        const check = await user.findOne({ where: { email  } });
-        if (check === null) { 
-            return Responses.badrequest( res , "400" , " user not found " ) 
+            return Responses.badRequest( res , "400" ,  " password cannt be empty " )   }
+            console.log(req.body)
+        const user = await User.findOne({ where: { email  } });
+
+        if (user === null) { 
+            return Responses.badRequest( res , "400" , " user not found " ) 
         } 
-        bcrypt.compare(req.body.password, user. password, function(err, results){
-            if(err){
-                throw new Error(err)
-             }
-             if (results) { 
-                return Responses.success( res , " Login success" , data )   }  // ****  edit data *** 
-             else {   
-                 return Responses.unauthorized( res )   }
+       const checkpassword = await bcrypt.compare(password, user.password);
+       if (!checkPassword) {
+        return Responses.badRequest(
+            res,
+            "InvalidCredentials",
+            "Email or password is incorrect"
+        );
+    }     
+    const accessToken = jwt.sign(
+        { userId: user.userId, role: user.role },
+        process.env.ACCESS_TOKEN_SECRET,
+        { expiresIn: 2 * 24 * 60 * 60 }
+    );
+    const refreshToken = jwt.sign(
+        { userId: user.userId, role: user.role, refresh: true },
+        process.env.REFRESH_TOKEN_SECRET,
+        { expiresIn: 7 * 24 * 60 * 60 }
+    ); 
+            
+        return Responses.success(
+            res,
+            "logged in Successfully",
+            {
+                access_token: accessToken,
+                refresh_token: refreshToken,
+                role:user.role    
             }
-            ) 
+        );     
     }
     catch(err){
       return next(err);
